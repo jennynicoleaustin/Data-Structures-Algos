@@ -1,17 +1,15 @@
 package org.example;
 
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
-import static org.example.LexiOrder.getSmallestAndLargest;
+import static org.example.PlusMinus.plusMinus;
 
 public class Main {
     public static void main(String[] args) {
 
+        List<Integer> integerList = Arrays.asList(-1, 0, 0, 1, 2);
 
-        Scanner scan = new Scanner(System.in);
-        String s = scan.next();
-        int k = scan.nextInt();
-        scan.close();
-
-        System.out.println(getSmallestAndLargest(s, k));    }
+        plusMinus(integerList);
+    }
 }
