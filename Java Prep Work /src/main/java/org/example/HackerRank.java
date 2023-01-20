@@ -1,0 +1,34 @@
+package org.example;
+
+public class HackerRank {
+
+//    s = time in 12 hour format '12:01:00PM'
+//    convert s to 24 hour format '12:01:00'
+    public static String timeConversion(String s) {
+//        if s ends with PM  & not 12 -> add 12 hours
+//        if s ends with AM & not 12 -> report as is, if 12 -> 00:00
+
+        String hourTime = s.substring(0,2);
+        String restTime = s.substring(2, 8);
+        String aOrP = s.substring(8,10);
+        String time = "";
+
+        if (hourTime.equals("12") && aOrP.equals("AM")) {
+            hourTime = "00";
+            time = hourTime + restTime;
+            return time;
+        } else if (aOrP.equals("PM") && !hourTime.equals("12")) {
+            int newHour = Integer.parseInt(hourTime) + 12;
+            hourTime = String.valueOf(newHour);
+            time = hourTime + restTime;
+        } else if (aOrP.equals("AM")) {
+            time = hourTime + restTime;
+        } else if (aOrP.equals("PM") && hourTime.equals("12")) {
+            time = hourTime + restTime;
+        }
+        System.out.println(time);
+        return time;
+    }
+
+
+}
