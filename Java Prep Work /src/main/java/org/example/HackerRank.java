@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.Collections;
+import java.util.List;
+
 public class HackerRank {
 
 //    s = time in 12 hour format '12:01:00PM'
@@ -30,5 +33,15 @@ public class HackerRank {
         return time;
     }
 
+//Given a list of numbers with an odd number find the median.
+    public static int findMedian(List<Integer> arr) {
+        // Write your code here
+    int size = arr.size();
+    int halfNoRemainder = size /2;
+        Collections.sort(arr);
+        int median = arr.get(halfNoRemainder);
+        System.out.println(median);
+    return median;
+    }
 
 }
