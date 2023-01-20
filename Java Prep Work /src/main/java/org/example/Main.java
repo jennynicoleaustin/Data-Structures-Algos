@@ -3,13 +3,16 @@ package org.example;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.example.PlusMinus.plusMinus;
+import static org.example.MiniMaxSum.miniMaxSum;
 
 public class Main {
     public static void main(String[] args) {
 
-        List<Integer> integerList = Arrays.asList(-1, 0, 0, 1, 2);
+        List<Integer> integerList = Arrays.asList(2, 9, 3, 4, 5);
 
-        plusMinus(integerList);
-    }
+//        plusMinus(integerList);
+
+        miniMaxSum(integerList);
+
+    } // Main Method close
 }
