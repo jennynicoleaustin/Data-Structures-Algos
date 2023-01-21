@@ -59,7 +59,17 @@ public class HackerRank {
         List<Integer> l = new ArrayList<Integer>(ind);
 
         return a.get(map.get(l.get(0)));
-
     }
-}
+
+    //  Given a square matrix calculate the absolute difference between the sums of its diagonals
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        int result = 0;
+//        List of lists...
+        int numColumnsAndRows = arr.get(0).size();
+//
+
+        return result;
+    }
+
+} //Hacker Rank Close
 

@@ -3,8 +3,6 @@ package org.example;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.example.HackerRank.lonelyinteger;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -13,7 +11,7 @@ public class Main {
         //        miniMaxSum(integerList);
 //        timeConversion("12:02:00PM");
 //        findMedian(integerList);
-        lonelyinteger(integerList);
+//        lonelyinteger(integerList);
 
     } // Main Method close
 }
