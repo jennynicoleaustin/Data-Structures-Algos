@@ -1,7 +1,6 @@
 package org.example;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class HackerRank {
 
@@ -46,9 +45,21 @@ public class HackerRank {
 
     //    Give an array of integers where all elements except one occur 2x -> isolate the element that only occurs once.
     public static int lonelyinteger(List<Integer> a) {
-        //    if itemA == itemB -> remove itemA and remove itemB
+        // iterate through the array to count the number of times an element occurs
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < a.size(); i++) {
+            if (map.containsKey(a.get(i))) {
+                map.remove(a.get(i));
+            } else {
+                map.put(a.get(i), i);
+            }
+        }
+        System.out.println(map);
+        Set<Integer> ind = map.keySet();
+        List<Integer> l = new ArrayList<Integer>(ind);
 
-    return a.get(0);
+        return a.get(map.get(l.get(0)));
+
     }
-
 }
+
