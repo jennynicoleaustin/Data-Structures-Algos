@@ -135,5 +135,28 @@ public class LinkedList {
         length ++;
     }
 
+//    Remove First
+    public Node removeFirst () {
+//        1. check if list is empty.
+//        2. check if only one item
+//        3. move head to head.next
+//        4. return removed node
+        Node removedItem;
+        if (length == 0) {
+            return null;
+        } else {
+            removedItem = head;
+            head = head.next; //reassign the head to the "next" value
+            removedItem.next = null; // remove the next value from the item you are removing
+            length --;
+            if (length == 0){ // check for a length of 0 (indicating that the list length was only 1 to begin with.)
+                tail = null;
+            }
+            return removedItem;
+        }
+
+    } //removeFirst
+
+
 
 } // Linked Lists
