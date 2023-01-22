@@ -52,8 +52,8 @@ public class DoublyLinkedList {
         System.out.println("Length: " + length);
     }
 
-//    Add new node to the end of the dbly linked list
-    public void append (int value) {
+    //    Add new node to the end of the dbly linked list
+    public void append(int value) {
         Node newNode = new Node(value);
         if (length == 0) {
             head = newNode;
@@ -63,9 +63,25 @@ public class DoublyLinkedList {
             newNode.prev = tail; // give newNode a prev pointer of tail
             tail = newNode; // reassign the tail of the dbly linked list to be the newNode
         }
-        length ++;
-    }
+        length++;
+    } // append
 
+    public Node removeLast() {
+        //        Because there are bidirectional pointers we do NOT have to iterate through the whole list to get to the last item in the list.
+        if (length == 0) return null; // empty list = null
+        Node temp = tail; // set the temp to the value of the tail
+        if (length == 1) { // if only one item in the list then remove by setting head and tail to null
+            head = null;
+            tail = null;
+        } else {
+            tail = tail.prev; // tail is now the node previous to the old tail
+            tail.next = null; // set the pointer of the removed item to null
+            temp.prev = null; // set the pointer to previous on removed item to null
+            length--;
+        }
+        return temp;
+
+    } // removeLast
 
 
 } // DoublyLinkedList
