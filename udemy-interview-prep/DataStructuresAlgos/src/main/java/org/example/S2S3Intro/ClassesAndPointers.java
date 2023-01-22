@@ -1,4 +1,4 @@
-package org.example;
+package org.example.S2S3Intro;
 
 import java.util.HashMap;
 
