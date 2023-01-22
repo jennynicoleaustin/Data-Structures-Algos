@@ -156,13 +156,26 @@ public class LinkedList {
         }
     } //removeFirst
 
-//    GET
+//    GET node at a particular index, and return it
     public Node get(int index){
 //        1. cannot get a node at indexes that don't exist.
-        if (index < 0 || index >= length) {
-            return null; // indicating the item at index does not exist.
+        if (index < 0 || index >= length) return null; // indicating the item at index does not exist.
+        Node temp = head; // Start at the beginning of the linked list
+        for(int i = 0; i < index; i++) { // move the temp node along the list until it makes it to the index
+            temp = temp.next;
         }
-    }
+        return temp;
+    } // get
+
+//    Set a new value at a particular index and return true if successful, false if we could not set the value.
+    public boolean set(int index, int value) {
+        Node temp = get(index); // get the node that we want to set to a new value. -> get method with check to see if index is out of range (return null if out of range) return the node if within range.
+        if(temp != null) {
+            temp.value = value;
+            return true;
+        }
+        return false;
+    } // set
 
 
 
