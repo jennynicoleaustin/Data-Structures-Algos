@@ -21,6 +21,7 @@ Think of a for loop where you have to loop through 1, 2, 3, 4, 5, 6, 7
 - Omicron (O - aka big O)
   - worst case  = 7
 
-### O(n)
-- O of n
-
+#### O(n) vs O(n^2)
+- O(n) is shows linear growth on a graph - n runs n # of times 
+- O (n^2) 
+  - more complex and growth is exponential the code executes n * #ofNested loops. 
