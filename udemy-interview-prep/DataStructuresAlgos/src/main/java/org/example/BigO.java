@@ -89,7 +89,17 @@ public static class nonDominants {
         public static int addItems (int n) {
             return n + n;
         }
-
     }
+
+    public static class OofLogN {
+// requires a sorted array
+//       ex 2^3 = 8 -> log2 8 = 3
+// Power of this method is when you are working with very large numbers.
+//        graph = a very mild slope (very close to a flat line)
+    }
+
+//    O(nlog n) -> used in quick sort
+
+
 
 } //BigO
