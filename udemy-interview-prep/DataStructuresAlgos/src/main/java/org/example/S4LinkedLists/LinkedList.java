@@ -132,15 +132,15 @@ public class LinkedList {
             newNode.next = head; // assign head as the newNode's next
             head = newNode; // assign the head pointer to the newNode
         }
-        length ++;
+        length++;
     }
 
-//    Remove First
-    public Node removeFirst () {
-//        1. check if list is empty.
-//        2. check if only one item
-//        3. move head to head.next
-//        4. return removed node
+    //    Remove First
+    public Node removeFirst() {
+        //        1. check if list is empty.
+        //        2. check if only one item
+        //        3. move head to head.next
+        //        4. return removed node
         Node removedItem;
         if (length == 0) {
             return null;
@@ -148,36 +148,56 @@ public class LinkedList {
             removedItem = head;
             head = head.next; //reassign the head to the "next" value
             removedItem.next = null; // remove the next value from the item you are removing
-            length --;
-            if (length == 0){ // check for a length of 0 (indicating that the list length was only 1 to begin with.)
+            length--;
+            if (length == 0) { // check for a length of 0 (indicating that the list length was only 1 to begin with.)
                 tail = null;
             }
             return removedItem;
         }
     } //removeFirst
 
-//    GET node at a particular index, and return it
-    public Node get(int index){
-//        1. cannot get a node at indexes that don't exist.
+    //    GET node at a particular index, and return it
+    public Node get(int index) {
+        //        1. cannot get a node at indexes that don't exist.
         if (index < 0 || index >= length) return null; // indicating the item at index does not exist.
         Node temp = head; // Start at the beginning of the linked list
-        for(int i = 0; i < index; i++) { // move the temp node along the list until it makes it to the index
+        for (int i = 0; i < index; i++) { // move the temp node along the list until it makes it to the index
             temp = temp.next;
         }
         return temp;
     } // get
 
-//    Set a new value at a particular index and return true if successful, false if we could not set the value.
+    //    Set a new value at a particular index and return true if successful, false if we could not set the value.
     public boolean set(int index, int value) {
         Node temp = get(index); // get the node that we want to set to a new value. -> get method with check to see if index is out of range (return null if out of range) return the node if within range.
-        if(temp != null) {
+        if (temp != null) {
             temp.value = value;
             return true;
         }
         return false;
     } // set
 
-
+    public boolean insert(int index, int value) {
+        //        Cannot insert if out of range
+        if (index < 0 || index > length) return false; // index out of range
+        if (index == 0) { // the index is 0, so we want to prepend (add to the very first spot in the list)
+            prepend(value);
+            return true;
+        }
+        if (index == length) { // indicates its the last node in the list so use the method we already made for that.
+            append(value);
+            return true;
+        }
+//        Insert into a spot on the list that is within range and not the first or last index.
+//        1. create a new Node to be inserted
+//        2. create a variable to hold the place where the node will be inserted.
+        Node newNode = new Node(value);
+        Node temp = get(index -1); // get the node at the index before where we want the newNode placed
+        newNode.next = temp.next; // set the pointer on newNode to be the temp.next
+        temp.next = newNode;
+        length ++;
+        return true;
+    } // Insert
 
 
 } // Linked Lists
