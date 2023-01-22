@@ -43,12 +43,12 @@ public class LinkedList {
         }
     }
 
-public LinkedList(int value) {
+    public LinkedList(int value) {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
         length = 1;
-}
+    }
 
     public void printList() {
         Node temp = head;
@@ -76,6 +76,19 @@ public LinkedList(int value) {
 
     public void getLength() {
         System.out.println("Length: " + length);
+    }
+
+    public void append (int value) {
+        Node newNode = new Node(value);
+        // 1. What if the list is empty?
+        if (length == 0) { // Could check if head == null or tail == null as well
+            head = newNode; // remember head and tail are POINTERS, since there is only one value to be assigned in the linked list than both tail and head must point to the same value.
+            tail = newNode;
+        } else { // 2. Append when list is NOT empty.
+            tail.next = newNode; // next after tail
+            tail = newNode; //
+        } // 3. Increase the length of the linked list by 1
+        length ++;
     }
 
 
