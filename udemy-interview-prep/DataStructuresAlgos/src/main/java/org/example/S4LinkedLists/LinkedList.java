@@ -154,8 +154,16 @@ public class LinkedList {
             }
             return removedItem;
         }
-
     } //removeFirst
+
+//    GET
+    public Node get(int index){
+//        1. cannot get a node at indexes that don't exist.
+        if (index < 0 || index >= length) {
+            return null; // indicating the item at index does not exist.
+        }
+    }
+
 
 
 
