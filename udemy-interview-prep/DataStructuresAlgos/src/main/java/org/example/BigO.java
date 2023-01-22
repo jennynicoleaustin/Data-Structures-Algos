@@ -100,6 +100,17 @@ public static class nonDominants {
 
 //    O(nlog n) -> used in quick sort
 
+// Different Terms for Inputs
+//    Video 12 -> 0 (a + b)
+//    if there are 2 parameters then it can not be simplified.
 
+// Array Lists
+//    Array Lists differ from Arrays because they are dynamic and allow us to add new items.
+    public static class arrayListsBigO {
+
+//   add and remove to the end of a list are simple (time complex) a single operation -> O(1)
+//    add or remove at a particular index is more complex -> You must change each item after the index in which you change. n = numberOfArrayListItems you had to change to perform action.
+
+    }
 
 } //BigO
