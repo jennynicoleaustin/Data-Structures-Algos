@@ -60,7 +60,7 @@ public class BigO {
 
 //    Each time you nest a for loop you are running the code n * #ofNesting.
 
-//    Drop Non-Dominants
+//    Drop Non-Dominants O (n^2 + n) n = non dominant term, as n gets larger the n because less relevant, and thus we drop the n
 public static class nonDominants {
 
     public static void printItems(int n) {
@@ -80,5 +80,16 @@ public static class nonDominants {
     }
 
 }// Non-dominants
+
+    public static class BigOofOne {
+//        AKA Constant time - graphically = flat line on the bottom.
+//        Most efficient
+//        As n increases the number of operations does not change.
+
+        public static int addItems (int n) {
+            return n + n;
+        }
+
+    }
 
 } //BigO
