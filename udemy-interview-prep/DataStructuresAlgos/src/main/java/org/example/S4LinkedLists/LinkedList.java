@@ -199,5 +199,21 @@ public class LinkedList {
         return true;
     } // Insert
 
+    public Node remove (int index) {
+//  1. Make sure the index is within range
+        if (index < 0 || index >= length) return null;
+        if (index == 0) return removeFirst();
+        if (index == length -1) return removeLast();
+        Node previous = get(index -1); //grab the node before the one we want to remove
+        Node temp = previous.next; // grab the node we want to remove
+        previous.next = temp.next;
+        temp.next = null;
+        length --;
+        return temp;
+    }
+
+
+
+
 
 } // Linked Lists
