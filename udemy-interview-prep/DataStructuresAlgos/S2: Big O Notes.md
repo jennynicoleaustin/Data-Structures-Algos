@@ -25,3 +25,7 @@ Think of a for loop where you have to loop through 1, 2, 3, 4, 5, 6, 7
 - O(n) is shows linear growth on a graph - n runs n # of times 
 - O (n^2) 
   - more complex and growth is exponential the code executes n * #ofNested loops. 
+
+Big O: Wrap up 
+- Video 14 
+  - compare the size of n to the types of Big O 

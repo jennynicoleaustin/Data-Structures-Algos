@@ -105,12 +105,15 @@ public static class nonDominants {
 //    if there are 2 parameters then it can not be simplified.
 
 // Array Lists
-//    Array Lists differ from Arrays because they are dynamic and allow us to add new items.
+//     differ from Arrays because they are dynamic and allow us to add new items.
     public static class arrayListsBigO {
-
+// ADD OR REMOVE
 //   add and remove to the end of a list are simple (time complex) a single operation -> O(1)
 //    add or remove at a particular index is more complex -> You must change each item after the index in which you change. n = numberOfArrayListItems you had to change to perform action.
 
+// FIND
+//        searching for a particular number in an array of ints -> You must touch every item in the array until you find the item you're looking for -> O(n)
+//          When searching by index -> you go directly to the index and so O(1)
     }
 
 } //BigO
