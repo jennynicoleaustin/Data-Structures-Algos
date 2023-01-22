@@ -78,7 +78,7 @@ public class LinkedList {
         System.out.println("Length: " + length);
     }
 
-    public void append (int value) {
+    public void append(int value) {
         Node newNode = new Node(value);
         // 1. What if the list is empty?
         if (length == 0) { // Could check if head == null or tail == null as well
@@ -88,19 +88,20 @@ public class LinkedList {
             tail.next = newNode; // next after tail
             tail = newNode; //
         } // 3. Increase the length of the linked list by 1
-        length ++;
+        length++;
     } //append
 
-// Remove item from END of list
-    public Node removeLast () {
-//        1. when the linked list is empty
-        if (length == 0) return null; // could also test for head == null or tail == null -> all 3 options will confirm the list is empty.
-//        2. remove the item from the end and return item (when there are multiple items in the list)
-//          Move tail to the previous node, and move node.next of previous node to "null"
-//          -> Must iterate through all the nodes until node.next = null (this will indicate the last node in the list)
-//          -> Need two variable, the before node & checking node.
-//          -> set before to the node previous to check node. Once check node == null; sent tail = before node.
-//          -> return check.
+    // Remove item from END of list
+    public Node removeLast() {
+        //        1. when the linked list is empty
+        if (length == 0)
+            return null; // could also test for head == null or tail == null -> all 3 options will confirm the list is empty.
+        //        2. remove the item from the end and return item (when there are multiple items in the list)
+        //          Move tail to the previous node, and move node.next of previous node to "null"
+        //          -> Must iterate through all the nodes until node.next = null (this will indicate the last node in the list)
+        //          -> Need two variable, the before node & checking node.
+        //          -> set before to the node previous to check node. Once check node == null; sent tail = before node.
+        //          -> return check.
         Node before = head;
         Node check = head;
         while (before.next != null) {
@@ -109,16 +110,30 @@ public class LinkedList {
         } // Once the loop is broken (before.next == null) then set tail = before & tail.next = null and return check;
         tail = before;
         tail.next = null;
-        length --; // update the length to be equal to one less
-//        3. When there is only one item in the list
+        length--; // update the length to be equal to one less
+        //        3. When there is only one item in the list
         if (length == 0) { // If after decrementing length, it is = 0 we need to remove head and tail pointers
             head = null;
             tail = null;
         }
         return check;
-    } // remove
+    } // removeLast
 
-
+    //    ADD item to the beginning of the list.
+    public void prepend(int value) {
+        //        1. if list is empty
+        //        2. create a new node that points to the head node
+        //        3. make head point to the new node
+        Node newNode = new Node(value);
+        if (length == 0) { // If list is empty set head and tail to the newNode
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head; // assign head as the newNode's next
+            head = newNode; // assign the head pointer to the newNode
+        }
+        length ++;
+    }
 
 
 } // Linked Lists
