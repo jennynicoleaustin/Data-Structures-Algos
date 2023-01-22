@@ -29,3 +29,8 @@ Think of a for loop where you have to loop through 1, 2, 3, 4, 5, 6, 7
 Big O: Wrap up 
 - Video 14 
   - compare the size of n to the types of Big O 
+
+O(n^2) = Loop within a Loop
+O(n) = proportional
+O(long n) = divide and Conquer
+O(1) = Constant
