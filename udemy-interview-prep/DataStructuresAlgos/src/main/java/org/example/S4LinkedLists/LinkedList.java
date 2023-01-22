@@ -212,6 +212,23 @@ public class LinkedList {
         return temp;
     }
 
+//    Reverse a linked lists order (does NOT) create a duplicate linked link but reverses the actual linked list
+    public void reverse () {
+//        1. tail = head and head = tail
+//        2. flip the direction of the pointers
+        Node temp = head; // temp is not the head of the original form of the list
+        head = tail; // now set the head for the reversed version to be the tail of the original
+        tail = temp; // set the tail to be the temp (previous head)
+        Node after = temp.next;
+        Node before = null;
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before; // flips the arrow the opposite way
+            before = temp;
+            temp = after;
+        }
+
+    }
 
 
 
