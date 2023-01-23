@@ -18,6 +18,17 @@ public class Graph {
         return false;
     }
 
+    public boolean addEdge (String vertex1, String vertex2) {
+        if(adjList.get(vertex1) != null && adjList.get(vertex2) != null) {
+            adjList.get(vertex1) // will return the value at vertex1 (the array list)
+                    .add(vertex2); // adds value of vertex2 to the array list for vertex1
+            adjList.get(vertex2) // repeat process for the other vertex
+                    .add(vertex1);
+            return true;
+        }
+        return false;
+    }
+
 
 // Method for testing in main
     public void printGraph() {
