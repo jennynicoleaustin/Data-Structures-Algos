@@ -15,4 +15,23 @@ public class Sort {
         }
     }
 
+
+// Selection Sort
+
+    public static void selectionSort (int[] array) {
+        for (int i = 0; i < array.length; i++ ) { // start at the first index of the array, continue looping until you complete on the last index of the array.
+            int minIndex = i;
+            for (int j = i+1; j < array.length; j++) { // start at i+1; continue till you get to the end of the array
+                if(array[j] < array[minIndex]) { // if item at j is less than the item at minIndex, replace minIndex with the index of the smaller value
+                    minIndex = j;
+                }
+            } // Below is the code to swap the items
+            if (i != minIndex) {
+                int temp = array[i];
+                array[i] = array[minIndex];
+                array[minIndex] = temp;
+            }
+        }
+    }
+
 } // Sort

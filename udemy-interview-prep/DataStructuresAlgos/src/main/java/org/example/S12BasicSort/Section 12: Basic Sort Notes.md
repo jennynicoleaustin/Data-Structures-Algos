@@ -7,3 +7,9 @@ inefficient
     - continue through each item in the array. 
 - Space Complexity = O(1)
   - since we do not need to make a copy of this array. 
+
+## Selection Sort 
+- * NEED indexes
+- variable minIndex -> originally assigned the value of the item at index 0. 
+  - check to see if the value at index 1 is less than 0; if so assign minIndex to be 1.... 
+  - checks each value in the array, to see if the item is lower than the previous one and then moves to the next item. 
