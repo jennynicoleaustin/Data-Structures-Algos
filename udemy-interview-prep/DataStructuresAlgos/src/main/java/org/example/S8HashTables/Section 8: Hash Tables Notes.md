@@ -27,3 +27,6 @@ Separate Chaining
 Linear Probing (a type of open addressing)
 - Go to the next open spot and insert it there. 
 
+## Setup 
+- If the address space has a prime number (7) then you will have fewer collisions 
+
