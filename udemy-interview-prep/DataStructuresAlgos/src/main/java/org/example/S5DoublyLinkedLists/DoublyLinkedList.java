@@ -111,6 +111,22 @@ public class DoublyLinkedList {
         return removedItem;
     }
 
+    public Node get(int index){
+        if (index < 0 || index >= length) return null; // if index is outside of range
+        Node temp = head; // where temp = the first node you iterate via.
+//        Efficiency -> since the list is doubly linked we can iterate through the list from the front or the back. go from front or back depending on the index number
+        if (index < length/2) { // if index is in the first half of the list, start from the beginning
+            for (int i = 0; i < index; i++) {
+                temp = temp.next;
+            }
+        } else { // for indexes that are in the second half of the list, start from the tail and move to the left
+            temp = tail;
+            for (int i = length-1; i > index; i--) { // i = to last index, while i is less than the index decrement
+               temp = temp.prev;
+            }
+        }
+            return temp;
+    }
 
 } // DoublyLinkedList
 
