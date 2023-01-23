@@ -158,5 +158,34 @@ public class DoublyLinkedList {
         return true;
     }
 
+    public Node remove (int index) {
+        if (index < 0 || index >= length) return null;
+        if (index == 0) return removeFirst();
+        if (index == length -1) return removeLast();
+        Node before = get(index -1);
+        Node removeNode = before.next;
+        Node after = removeNode.next;
+        before.next = after;
+        after.prev = before;
+        removeNode.prev = null;
+        removeNode.next = null;
+        length --;
+        return removeNode;
+    }
+
+// Same as the remove method but less readable by only using one variable.
+    public Node removeWithSingleVariable (int index) {
+        if (index < 0 || index >= length) return null;
+        if (index == 0) return removeFirst();
+        if (index == length - 1) return removeLast();
+        Node removedNode = get(index);
+        removedNode.next.prev = removedNode.prev;
+        removedNode.prev.next = removedNode.next;
+        removedNode.prev = null;
+        removedNode.next = null;
+        length --;
+        return removedNode;
+    }
+
 } // DoublyLinkedList
 
