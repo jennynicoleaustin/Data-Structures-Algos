@@ -40,6 +40,17 @@ public class Graph {
         return false;
     }
 
+    public boolean removeVertex (String removeVertex) {
+//        Must remove the vertex indicated and the edges for the vertex AND the edge of (vertex) from the vertices of the edges of vertex
+       if ( adjList.get(removeVertex) == null) return false; // the vertex does not exist in the graph
+        for (String otherVertex : adjList.get(removeVertex)) { // for each of the vertexes within the arraylist attached to vertex we want to remove
+            adjList.get(otherVertex) // get the otherVertex that is within the removeVertex array list
+                    .remove(removeVertex); // remove the removeVertex from otherVertex's array list
+        }
+        adjList.remove(removeVertex);
+        return true;
+    }
+
 
 // Method for testing in main
     public void printGraph() {
