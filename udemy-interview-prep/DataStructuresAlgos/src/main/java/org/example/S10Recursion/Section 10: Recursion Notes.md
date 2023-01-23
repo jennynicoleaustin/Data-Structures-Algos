@@ -8,3 +8,9 @@ A method that calls itself until it stops calling itself.
 
 Base case 
 - last case scenario -> some way to break out of the loop 
+
+## Call Stack 
+- code runs from bottom to top one method at a time. 
+
+## Factorial 
+- use recursion to solve a factorial 
