@@ -7,22 +7,22 @@ public class BinarySearchTree {
         Node left;
         Node right;
 
-        Node (int value) {
+        Node(int value) {
             this.value = value;
         }
     }
 
-    Node root ;
+    Node root;
 
-// Insert
-//    1. create newNode
-//    temp = root (to check each item)
-//    2. while loop
-//      if newNode == temp return false (node value already exists)
-//      if < left else > right
-//      if null insert newNode else move to next
+    // Insert
+    //    1. create newNode
+    //    temp = root (to check each item)
+    //    2. while loop
+    //      if newNode == temp return false (node value already exists)
+    //      if < left else > right
+    //      if null insert newNode else move to next
 
-    public boolean insert (int value) {
+    public boolean insert(int value) {
         Node newNode = new Node(value);
         if (root == null) { // If the tree is empty, set root to the value of the new node
             root = newNode;
@@ -32,7 +32,7 @@ public class BinarySearchTree {
         while (true) {
             if (newNode.value == check.value) return false; // If the value already exists in the tree
             if (newNode.value < check.value) { // is the new node less than the check node?
-                if(check.left == null) { // if the check nodes left spot empty so we can add on?
+                if (check.left == null) { // if the check nodes left spot empty so we can add on?
                     check.left = newNode; // add to the left of the check node
                     return true; // break out of the loop
                 } // if the check.left spot is not empty...
@@ -47,10 +47,10 @@ public class BinarySearchTree {
         }
     } // insert
 
-//    Contains
-//    -> find a number in the tree
+    //    Contains
+    //    -> find a number in the tree
 
-    public boolean contains (int value) {
+    public boolean contains(int value) {
         if (root == null) return false; // if the tree is empty then it does not exist.
         Node checkNode = root; // start at the root of the tree
         while (checkNode != null) { // while there are still nodes to be checked
@@ -65,11 +65,12 @@ public class BinarySearchTree {
         return false;
     }
 
-// Contains method using recursion
-    private boolean rContains (Node currentNode, int value) {
+    // Contains method using recursion
+    private boolean rContains(Node currentNode, int value) {
         if (currentNode == null) return false; // check for an empty search tree
-        if (currentNode.value == value ) return true; // if the current nodes value is equal to the value we are trying to find, return true.
-//        traverse through the tree to find the correct node
+        if (currentNode.value == value)
+            return true; // if the current nodes value is equal to the value we are trying to find, return true.
+        //        traverse through the tree to find the correct node
         if (value < currentNode.value) {
             return rContains(currentNode.left, value);
         } else {
@@ -77,13 +78,13 @@ public class BinarySearchTree {
         }
     }
 
-// Overloaded method with different parameters and public form
-    public boolean rContains (int value) {
+    // Overloaded method with different parameters and public form
+    public boolean rContains(int value) {
         return rContains(root, value); // recursively calls the other rContains that has both the currentNode and value parameters
     }
 
-// Insert using recursion
-    private Node rInsert (Node currentNode, int value) {
+    // Insert using recursion
+    private Node rInsert(Node currentNode, int value) {
         if (currentNode == null) return new Node(value);
         if (value < currentNode.value) {
             currentNode.left = rInsert(currentNode.left, value);
@@ -93,26 +94,48 @@ public class BinarySearchTree {
         return currentNode;
     }
 
-    public void rInsert (int value) {
+    public void rInsert(int value) {
         if (root == null) root = new Node(value);
         rInsert(root, value);
     }
 
-// Delete with recursion
-//    1. You must traverse through the tree in order to find it.
-//    2. Delete it
-//      -> how to handle it if there are nodes below (to the right and left) of the node you want to delete.
-//          -> Single node: move the lower subtrees up to the removedNode's parent
-//          -> Nodes(subtrees) on either side.
-//            -> Right side: find the node (within the subtree on the right) with the lowest value
-//                -> copy that value into the removeNode's place. (you are not removing the "removeNode" but rather assigning it the new value)
-//                    -> Then move remove the value
+    // Delete with recursion
+    //    1. You must traverse through the tree in order to find it.
+    //    2. Delete it
+    //      -> how to handle it if there are nodes below (to the right and left) of the node you want to delete.
+    //          -> Single node: move the lower subtrees up to the removedNode's parent
+    //          -> Nodes(subtrees) on either side.
+    //            -> Right side: find the node (within the subtree on the right) with the lowest value
+    //                -> copy that value into the removeNode's place. (you are not removing the "removeNode" but rather assigning it the new value)
+    //                    -> Then move remove the value
 
+    private Node deleteNode(Node currentNode, int value) {
+        if (currentNode == null)
+            return null; // base case and the way to break out of the loop. handles if the tree is empty and also when we finally iterate through and remove the node we want to delete.
+        if (value < currentNode.value) { // traverse left
+            currentNode.left = deleteNode(currentNode.left, value);
+        } else if (value > currentNode.value) { // traverse right
+            currentNode.right = deleteNode(currentNode.right, value);
+        } else { // we found the value we are looking for
+            if (currentNode.left == null && currentNode.right == null) { // Leaf node -> no children nodes
+                return null; // removes the currentNode from the tree
+            } else if (currentNode.left == null) { // indicates there is only a subtree (children node) on the right side.
+                currentNode = currentNode.right;
+            } else if (currentNode.right == null) { // indicates there is only a child node on the left side
+                currentNode = currentNode.left;
+            } else { // when there is a child node on both the left and right side of the node you want to delete
 
+            }
 
+            // node to only the left or only the right
+            // node on both the right and the left
+        }
+        return currentNode;
+    }
 
-
-
+    public void deleteNode(int value) {
+        deleteNode(root, value);
+    }
 
 
 } // Binary Search Trees
