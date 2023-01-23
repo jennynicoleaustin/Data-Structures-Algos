@@ -7,7 +7,7 @@
   - in queued the node
 
 ### Rule for Queues 
-- inQueue (adding) & dequeue (removing) must be done from opposite ends. 
+- enQueue (adding) & dequeue (removing) must be done from opposite ends. 
 
 ### Big O 
 

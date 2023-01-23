@@ -26,9 +26,9 @@ Imagine a stack of blocks.
 
 ### Linked list = a way to implement a stack 
 #### END of list
-- Add to end of linked list = O(n)
-- Remove from end of linked list = O (1)
+- Add (push) to end of linked list = O(n)
+- Remove (pop) from end of linked list = O (1)
 #### Start of list
-- add and remove = O(1)
+- add (push) and remove (pop) = O(1)
 - ** Better to add and remove from the front of a linked list. 
 - null terminated end at the bottom of the stack. 
