@@ -137,5 +137,25 @@ public class DoublyLinkedList {
         return false;
     }
 
+    public boolean insert (int index, int value) {
+        if (index < 0 || index > length) return false; // index out of range
+        if (index == 0) { // the index is 0, so we want to prepend (add to the very first spot in the list)
+            prepend(value);
+            return true;
+        }
+        if (index == length) { // indicates its the last node in the list so use the method we already made for that.
+            append(value);
+            return true;
+        }
+        Node newNode = new Node(value);
+        Node before = get(index -1);
+        Node after = before.next;
+        newNode.prev = before;
+        newNode.next = after;
+        before.next = newNode;
+        after.prev = newNode;
+        return true;
+    }
+
 } // DoublyLinkedList
 
