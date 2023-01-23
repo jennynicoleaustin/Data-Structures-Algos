@@ -22,6 +22,32 @@ public class HashTable {
         }
     }
 
+    private int hash(String key) { //private because it will only be used by other methods within the HashTable class
+        int hash = 0;
+        char[] keyChars = key.toCharArray(); // pass in a string key and convert to an array of characters instead
+        for (int i = 0; i < keyChars.length; i++) { // loop through the array of characters
+            int asciiValue = keyChars[i]; // ascii character value = a num value that is assigned to each character in the alphabet
+            // Equation below will always return a number that is equal to one of the indexes in the array.
+            hash = (hash + asciiValue * 23) % dataMap.length; // why 23? because it is a prime number, which will give a more random number -> result = the remainder (range from 0->6)
+        }
+        return hash;
+    }
+
+    public void set (String key, int value) {
+        int index = hash(key); // run hash method on the key to determine where the node should be placed on the hash table
+        Node newNode = new Node(key, value);
+        if (dataMap[index] == null) { // if the dataMap at that particular index is empty (null) then insert at that point
+            dataMap[index] = newNode;
+        } else { // if dataMap at that index is not null (aka there are already items in the linked list)
+            Node temp = dataMap[index]; //assign variable that we iterate through the list. initially set to the dataMap[index] (the pointer that points to the first node)
+            while (temp.next != null) { // while data exists at the dataMap[index] (temp iterator) keep going to the next node.
+                temp = temp.next;
+            } // as soon as the value of temp.next is equal to null we break out of the loop.
+            temp.next = newNode; // now set temp.next (which is currently null) to be equal to the newNode.
+        }
+    }
+
+
 
 
 // Method used for checking work in main
