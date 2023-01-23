@@ -13,3 +13,7 @@ inefficient
 - variable minIndex -> originally assigned the value of the item at index 0. 
   - check to see if the value at index 1 is less than 0; if so assign minIndex to be 1.... 
   - checks each value in the array, to see if the item is lower than the previous one and then moves to the next item. 
+
+## Insertion Sort 
+- Always starts with the second item in the list 
+  - if the second item is less than the item to the right then switch the items. 
