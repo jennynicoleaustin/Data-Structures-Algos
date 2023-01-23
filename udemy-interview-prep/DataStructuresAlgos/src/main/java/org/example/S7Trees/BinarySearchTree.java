@@ -137,5 +137,17 @@ public class BinarySearchTree {
         deleteNode(root, value);
     }
 
+//    Helper method that finds the minimum value in any binary search tree or subtree of a search tree
+//    -> go left until the next value == null. The node with the minimum value will always be open for adding nodes.
+    public int minValue(Node currentNode) {
+        while (currentNode.left != null) {
+            currentNode = currentNode.left; // continue to traverse the tree to the left until currentNode.left = null
+        }
+        return currentNode.value; // return the int value to be used inside the other function.
+    }
+
+
+
+
 
 } // Binary Search Trees
