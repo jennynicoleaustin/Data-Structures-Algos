@@ -1,10 +1,9 @@
 package org.example.S6StacksAndQueues;
-import org.w3c.dom.Node;
 
 public class Stack {
     class Node {
         int value;
-        int next;
+        Node next;
 
         Node(int value) {
             this.value = value;
@@ -20,6 +19,33 @@ public class Stack {
         height = 1;
     }
 
+//  Add new node to the top of the stack
+    public void push (int value) {
+        Node newNode = new Node(value);
+//        If stack is empty
+        if (height == 0) {
+            top = newNode;
+        } else {
+            newNode.next = top; // assign the newNode's next node as the current top
+            top = newNode; // assign the top to the newNode
+        }
+        height ++;
+    }
+
+    public Node pop () {
+        if (height == 0) return null;
+        Node poppedNode = top; // assign the top node to the new variable.
+        top = top.next; // reassign top to the node next after the new top
+        poppedNode.next = null; // assign null to next for removed item
+        height --;
+        return poppedNode;
+    }
+
+
+
+
+
+    // Methods for checking code in main method
     public void printStack() {
         Node temp = top;
         while (temp != null) {
