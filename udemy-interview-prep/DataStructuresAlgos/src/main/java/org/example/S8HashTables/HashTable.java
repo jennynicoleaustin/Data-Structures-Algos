@@ -47,6 +47,17 @@ public class HashTable {
         }
     }
 
+    public int get (String key) {
+        int index = hash(key); // use the key to find the index of that node
+        Node temp = dataMap[index]; // variable used to iterate through the dataMap -- if there is no nodes inside the dataMap then temp with be set to null
+        while (temp != null) { // iterate through the list until you get to the end of the list (aka the null)
+            if(temp.key.equals(key)) {
+                return temp.value;
+            }
+        }
+        return 0;
+    }
+
 
 
 
