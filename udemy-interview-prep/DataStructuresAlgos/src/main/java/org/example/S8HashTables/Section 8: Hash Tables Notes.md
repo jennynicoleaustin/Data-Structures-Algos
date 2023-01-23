@@ -30,3 +30,19 @@ Linear Probing (a type of open addressing)
 ## Setup 
 - If the address space has a prime number (7) then you will have fewer collisions 
 
+### Big O
+
+Hash Method 
+- O(1)
+  - no matter how many items are in the hash table the hash method will go through the same number of operations. 
+Get and Set 
+- O(1)
+
+
+
+
+
+
+
+
+

@@ -74,8 +74,6 @@ public class HashTable {
     }
 
 
-
-
 // Method used for checking work in main
     public void printTable() {
         for (int i = 0; i < dataMap.length; i++) {
