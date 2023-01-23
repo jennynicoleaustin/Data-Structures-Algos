@@ -29,6 +29,17 @@ public class Graph {
         return false;
     }
 
+    public boolean removeEdge (String vertex1, String vertex2) { // pass the two vertices that you are removing the edge between
+        if (adjList.get(vertex1) != null && adjList.get(vertex2) != null) {
+            adjList.get(vertex1)
+                    .remove(vertex2);
+            adjList.get(vertex2)
+                    .remove(vertex1);
+            return true;
+        }
+        return false;
+    }
+
 
 // Method for testing in main
     public void printGraph() {
