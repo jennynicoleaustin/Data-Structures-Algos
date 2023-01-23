@@ -80,8 +80,36 @@ public class DoublyLinkedList {
             length--;
         }
         return temp;
-
     } // removeLast
+
+    public void prepend (int value) {
+        Node newNode = new Node(value);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head; // the head becomes the next
+            head.prev = newNode; // the previous head is no longer null, but newNode
+            head = newNode; // set the head to the newNode;
+        }
+        length ++;
+    } // prepend
+
+
+    public Node removeFirst() {
+        if (length == 0) return null; // empty list
+        Node removedItem = head; // first item in the list becomes removed item
+        if (length == 1) {
+            head = null; // remove pointers from removed item
+            tail = null; //remove pointers from removed item
+        } else {
+            head = head.next; // next item in the list is now the head
+            head.prev = null; // the heads left pointer now points to nothing
+            removedItem.next = null; // the removed item gets a null right pointer
+        }
+        length --;
+        return removedItem;
+    }
 
 
 } // DoublyLinkedList
