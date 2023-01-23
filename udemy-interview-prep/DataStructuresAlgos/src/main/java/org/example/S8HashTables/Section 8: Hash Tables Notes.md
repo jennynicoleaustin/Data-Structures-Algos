@@ -16,3 +16,14 @@ Hash Method = one way
   - every time you look for a "SomeKey" = "someKeys address"
 
 Multiple items at a particular index?
+
+## Collisions 
+- Item already present at the address you would like to insert a new item 
+
+Separate Chaining
+- Add the next key value pair at the same address even if there is already one there. 
+  - How to handle? Have a linked list at each address. 
+
+Linear Probing (a type of open addressing)
+- Go to the next open spot and insert it there. 
+
