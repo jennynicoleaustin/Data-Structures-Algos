@@ -1,5 +1,7 @@
 package org.example.S8HashTables;
 
+import java.util.ArrayList;
+
 public class HashTable {
 
     private int size; // size of the address spaces in the hash table
@@ -56,6 +58,19 @@ public class HashTable {
             }
         }
         return 0;
+    }
+
+//  take all keys, place them in an array list and return that array list
+    public ArrayList<String> keys () {
+        ArrayList<String> allKeys = new ArrayList<>();
+        for (int i = 0; i < dataMap.length; i++) {
+            Node temp = dataMap[i];
+            while (temp != null) {
+                allKeys.add(temp.key);
+                temp = temp.next;
+            }
+        }
+        return allKeys;
     }
 
 
