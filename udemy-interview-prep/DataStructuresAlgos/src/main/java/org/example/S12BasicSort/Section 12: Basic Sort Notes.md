@@ -17,3 +17,8 @@ inefficient
 ## Insertion Sort 
 - Always starts with the second item in the list 
   - if the second item is less than the item to the right then switch the items. 
+
+
+## Big O
+- worst case = 0(n^2)
+- however, if data is almost sorted (aka only one thing out a place) then these are actually more efficient. 
