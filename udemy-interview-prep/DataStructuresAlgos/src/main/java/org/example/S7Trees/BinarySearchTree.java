@@ -124,6 +124,9 @@ public class BinarySearchTree {
             } else if (currentNode.right == null) { // indicates there is only a child node on the left side
                 currentNode = currentNode.left;
             } else { // when there is a child node on both the left and right side of the node you want to delete
+                int subTreeMin = minValue(currentNode.right); // find the min value of the subtree that is on the right of the node you want to delete
+                currentNode.value = subTreeMin; // change the value of currentNode (the one you want to delete) to the subtrees minimum value
+                currentNode.right = deleteNode(currentNode.right, subTreeMin); // traverse through to find the duplicate value starting with the right side of the currentNode (where we found the minvalue in the first place)
 
             }
 
