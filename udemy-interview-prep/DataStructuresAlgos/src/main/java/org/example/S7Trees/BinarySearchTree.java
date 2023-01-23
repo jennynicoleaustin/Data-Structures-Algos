@@ -94,6 +94,25 @@ public class BinarySearchTree {
     }
 
     public void rInsert (int value) {
+        if (root == null) root = new Node(value);
         rInsert(root, value);
     }
+
+// Delete with recursion
+//    1. You must traverse through the tree in order to find it.
+//    2. Delete it
+//      -> how to handle it if there are nodes below (to the right and left) of the node you want to delete.
+//          -> Single node: move the lower subtrees up to the removedNode's parent
+//          -> Nodes(subtrees) on either side.
+//            -> Right side: find the node (within the subtree on the right) with the lowest value
+//                -> copy that value into the removeNode's place. (you are not removing the "removeNode" but rather assigning it the new value)
+//                    -> Then move remove the value
+
+
+
+
+
+
+
+
 } // Binary Search Trees
