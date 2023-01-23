@@ -65,6 +65,23 @@ public class BinarySearchTree {
         return false;
     }
 
+// Contains method using recursion
+    private boolean rContains (Node currentNode, int value) {
+        if (currentNode == null) return false; // check for an empty search tree
+        if (currentNode.value == value ) return true; // if the current nodes value is equal to the value we are trying to find, return true.
+//        traverse through the tree to find the correct node
+        if (value < currentNode.value) {
+            return rContains(currentNode.left, value);
+        } else {
+            return rContains(currentNode.right, value);
+        }
+    }
+
+// Overloaded method with different parameters and public form
+    public boolean rContains (int value) {
+        return rContains(root, value); // recursively calls the other rContains that has both the currentNode and value parameters
+    }
 
 
-}
+
+} // Binary Search Trees
