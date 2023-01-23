@@ -14,5 +14,31 @@ Edge
 
 ### Adjacency Matrix 
 - if edges are weighted then they should be stored in the matrix as that value rather than a 1 
+- Stored as a two-dimensional array 
 
 ### Adjacency List
+- represent a graph as a hashmap 
+- key = vertex; edges = values
+- `{  "A" = ["B", "E"] }  `
+
+### Big O 
+Space Complexity 
+- Adjacency Matrix 
+  - O ( | V |^2 )
+- Adjacency List ** Better on space complexity
+  - O ( | V | + | E |)
+
+Time Complexity 
+Adding Node
+- Adjacent Matrix 
+  - O ( | V |^2 )
+- Adjacency List 
+  - O (1)
+
+Add edge
+- Both 
+  - O (n)
+
+Adjacency Matrix 
+- more effective for finding a item 
+- 
