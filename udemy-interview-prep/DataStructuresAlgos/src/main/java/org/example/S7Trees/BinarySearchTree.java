@@ -82,6 +82,18 @@ public class BinarySearchTree {
         return rContains(root, value); // recursively calls the other rContains that has both the currentNode and value parameters
     }
 
+// Insert using recursion
+    private Node rInsert (Node currentNode, int value) {
+        if (currentNode == null) return new Node(value);
+        if (value < currentNode.value) {
+            currentNode.left = rInsert(currentNode.left, value);
+        } else {
+            currentNode.right = rInsert(currentNode.right, value);
+        }
+        return currentNode;
+    }
 
-
+    public void rInsert (int value) {
+        rInsert(root, value);
+    }
 } // Binary Search Trees
