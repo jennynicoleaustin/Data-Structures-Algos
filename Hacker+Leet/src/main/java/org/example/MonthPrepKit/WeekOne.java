@@ -1,5 +1,6 @@
 package org.example.MonthPrepKit;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class WeekOne {
@@ -32,8 +33,20 @@ public class WeekOne {
     // MiniMaxSum
     //    1. Find the min and max calculated values possible from adding 4 numbers from a list of 5.
     public static void miniMaxSum(List<Integer> arr) {
-        // Write your code here
-
+        long minSum = 0;
+        long maxSum = 0;
+        // -> Sort the list
+        arr.sort(Comparator.naturalOrder());
+        // -> sum of the first 4 nums = min value
+        for (int i = 0; i < 4; i++) {
+            minSum += arr.get(i);
+        }
+        // -> sum of the last five nums = max value
+        for (int j = 1; j <= 4; j++) {
+            maxSum += arr.get(j);
+        }
+//        -> print on single line seperated by a space
+        System.out.println(minSum + " " + maxSum);
     }
 
 } // Week One
