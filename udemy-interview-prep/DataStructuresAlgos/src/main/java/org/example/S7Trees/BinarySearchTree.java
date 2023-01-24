@@ -172,5 +172,27 @@ public class BinarySearchTree {
         return results;
     }
 
+    //    Depth First Search -> using recursion
+
+    //    PreOrder (DFS)
+    public ArrayList<Integer> DFSPreOrder() {
+        ArrayList<Integer> results = new ArrayList<>();
+
+        class Traverse { // work around to add a method inside a method in java
+            Traverse(Node currentNode) {
+                results.add((currentNode.value));
+                if (currentNode.left != null) {
+                    new Traverse(currentNode.left);
+                }
+                if (currentNode.right != null) {
+                    new Traverse(currentNode.right);
+                }
+            }
+        } //Traverse class
+        new Traverse((root));
+
+        return results;
+    }
+
 
 } // Binary Search Trees
