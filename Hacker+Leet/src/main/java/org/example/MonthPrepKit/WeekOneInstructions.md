@@ -14,3 +14,7 @@
 
 ### Diagonal Difference 
 ![](../../../../resources/InstructionScreenShots/diagonaldifference.png)
+
+### Counting Sort 
+![](../../../../resources/InstructionScreenShots/countingSort1.png)
+![](../../../../resources/InstructionScreenShots/coutingsort2.png)

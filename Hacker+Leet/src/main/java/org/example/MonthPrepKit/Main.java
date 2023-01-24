@@ -14,7 +14,7 @@ public class Main {
         //        WeekOne.miniMaxSum(integerList);
         //        WeekOne.lonelyInteger(integerList);
         //        WeekOne.flippingBits(2147);
-        WeekOne.diagonalDifference(matrix);
-
+//        WeekOne.diagonalDifference(matrix);
+WeekOne.countingSort(int1);
     } // Main method
 } // Main Class

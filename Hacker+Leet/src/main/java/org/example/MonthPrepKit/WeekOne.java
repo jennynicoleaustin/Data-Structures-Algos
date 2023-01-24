@@ -113,7 +113,7 @@ public class WeekOne {
         for (int i = 0; i < arr.size(); i++) {
             firstDiagonal += arr.get(i).get(i);
         }
-        int lastIndex = arr.size()-1;
+        int lastIndex = arr.size() - 1;
         for (int j = 0; j < arr.size(); j++) {
             lastDiagonal += arr.get(j).get(lastIndex);
             lastIndex--;
@@ -123,5 +123,19 @@ public class WeekOne {
         return result;
     }
 
+
+    //    Counting Sort
+    //    Given a list of integers count and return(as an arraylist) the number of times each value appears
+    public static List<Integer> countingSort(List<Integer> arr) {
+        List<Integer> result = new ArrayList<>();
+        // Give the array list a value of 0 at every index and a total size of 100.
+        for (int i = 1; i <= 100; i++) {
+            result.add(0);
+        }
+        for (int num : arr) {
+            result.set(num, (result.get(num)+1));
+        }
+        return result;
+    }
 
 } // Week One
