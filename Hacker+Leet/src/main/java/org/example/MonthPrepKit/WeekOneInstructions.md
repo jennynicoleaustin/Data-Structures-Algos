@@ -11,3 +11,6 @@
 
 ### Flipping Bits 
 ![](../../../../resources/InstructionScreenShots/flippingbits.png)
+
+### Diagonal Difference 
+![](../../../../resources/InstructionScreenShots/diagonaldifference.png)

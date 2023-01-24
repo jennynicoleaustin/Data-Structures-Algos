@@ -102,7 +102,24 @@ public class WeekOne {
         String finalResult = zerosFirst.replace('b', '0'); // switch all the b(1) to 0
         //        3. convert result back to int
         long result = Long.parseLong(finalResult, 2);
+        return result;
+    }
 
+    //    Diagonal Difference
+    //    1. Given a square matrix, calculate the absolute difference between the diagonals.
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        int firstDiagonal = 0;
+        int lastDiagonal = 0;
+        for (int i = 0; i < arr.size(); i++) {
+            firstDiagonal += arr.get(i).get(i);
+        }
+        int lastIndex = arr.size()-1;
+        for (int j = 0; j < arr.size(); j++) {
+            lastDiagonal += arr.get(j).get(lastIndex);
+            lastIndex--;
+        }
+        int beforeAbs = (firstDiagonal - lastDiagonal);
+        int result = Math.abs(beforeAbs);
         return result;
     }
 
