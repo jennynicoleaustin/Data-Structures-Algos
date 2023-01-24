@@ -8,3 +8,14 @@
   - recursively run until it is sorted 
 - run quick sort on the right side
   - run recursively until it is sorted. 
+
+### Big O 
+
+Space Complexity O(1)
+- no duplicates 
+
+Time Complexity O(n^2) - for worst case almost sorted or sorted data. 
+- best case for quick sort = O(n log n)
+- worst case O(n^2) 
+  - if you have already sorted then its inefficient 
+  - 
