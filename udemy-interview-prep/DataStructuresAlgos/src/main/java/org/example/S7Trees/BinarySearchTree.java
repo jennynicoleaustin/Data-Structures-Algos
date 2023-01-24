@@ -194,8 +194,8 @@ public class BinarySearchTree {
         return results;
     }
 
-//    DFS: PostOrder
-    public ArrayList<Integer> DFSPostOrder  () {
+    //    DFS: PostOrder
+    public ArrayList<Integer> DFSPostOrder() {
         ArrayList<Integer> results = new ArrayList<>();
 
         class Traverse { // work around to add a method inside a method in java
@@ -213,7 +213,26 @@ public class BinarySearchTree {
         return results;
     }
 
+    //    DFS: InOrder
 
+    public ArrayList<Integer> DFSInOrder() { // lowest to highest in numerical order
+        ArrayList<Integer> results = new ArrayList<>();
+
+        class Traverse { // work around to add a method inside a method in java
+            Traverse(Node currentNode) {
+                if (currentNode.left != null) {
+                    new Traverse(currentNode.left);
+                }
+                results.add((currentNode.value));
+                if (currentNode.right != null) {
+                    new Traverse(currentNode.right);
+                }
+            }
+        } //Traverse class
+
+        new Traverse(root);
+        return results;
+    } // DFS: In Order
 
 
 } // Binary Search Trees

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.prevAttempts;
 
 //We use the integers , , and  to create the following series:
 //
