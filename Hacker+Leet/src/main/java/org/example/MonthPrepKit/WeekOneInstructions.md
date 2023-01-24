@@ -5,3 +5,6 @@
 
 ### Matching Strings
 ![](../../../../resources/InstructionScreenShots/MatchingStrings1.png)
+
+### Lonely Integer
+![](../../../../resources/InstructionScreenShots/lonelyInteger.png)

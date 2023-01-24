@@ -53,12 +53,12 @@ public class WeekOne {
     //    Matching Strings
     //    -> For each query string determine how many times it occurs in the list of input strings. return an array with the results.
     public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
-//        Array list for results
+        //        Array list for results
         List<Integer> results = new ArrayList<>();
-//      for each query we will check to see it matches the value at each index of the list of strings; if it does increment the count; then when the loop is done add the count to the results array.
+        //      for each query we will check to see it matches the value at each index of the list of strings; if it does increment the count; then when the loop is done add the count to the results array.
         for (String query : queries) {
             int count = 0; // initialize the count variable
-            for(int i = 0; i < strings.size(); i++) {
+            for (int i = 0; i < strings.size(); i++) {
                 if (strings.get(i).equals(query)) {
                     count++;
                 }
@@ -67,5 +67,26 @@ public class WeekOne {
         }
         return results;
     }
+
+    //    Lonely Integer
+    //    1. Find the element (in an array of integers) that only occurs once.
+    public static int lonelyinteger(List<Integer> a) {
+        int lonelyInteger = -1;
+        //Count the number of times each item occurs in the array
+        //        if the count = 1; then lonely int = that item.
+        for (int number : a) {
+            int count = 0;
+            for(int i = 0; i < a.size(); i++) {
+                if (a.get(i) == number) {
+                    count++;
+                }
+            }
+            if (count == 1) {
+                lonelyInteger = number;
+            }
+        }
+        return lonelyInteger;
+    }
+
 
 } // Week One
