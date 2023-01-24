@@ -194,5 +194,26 @@ public class BinarySearchTree {
         return results;
     }
 
+//    DFS: PostOrder
+    public ArrayList<Integer> DFSPostOrder  () {
+        ArrayList<Integer> results = new ArrayList<>();
+
+        class Traverse { // work around to add a method inside a method in java
+            Traverse(Node currentNode) {
+                if (currentNode.left != null) {
+                    new Traverse(currentNode.left);
+                }
+                if (currentNode.right != null) {
+                    new Traverse(currentNode.right);
+                }
+                results.add((currentNode.value)); // Only difference from pre and post is where you add the value to the results array.
+            }
+        } //Traverse class
+        new Traverse(root);
+        return results;
+    }
+
+
+
 
 } // Binary Search Trees
