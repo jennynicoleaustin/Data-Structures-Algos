@@ -1,5 +1,6 @@
 package org.example.MonthPrepKit;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -45,13 +46,26 @@ public class WeekOne {
         for (int j = 1; j <= 4; j++) {
             maxSum += arr.get(j);
         }
-//        -> print on single line seperated by a space
+        //        -> print on single line seperated by a space
         System.out.println(minSum + " " + maxSum);
     }
 
-//    Matching Strings
+    //    Matching Strings
+    //    -> For each query string determine how many times it occurs in the list of input strings. return an array with the results.
     public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
-
+//        Array list for results
+        List<Integer> results = new ArrayList<>();
+//      for each query we will check to see it matches the value at each index of the list of strings; if it does increment the count; then when the loop is done add the count to the results array.
+        for (String query : queries) {
+            int count = 0; // initialize the count variable
+            for(int i = 0; i < strings.size(); i++) {
+                if (strings.get(i).equals(query)) {
+                    count++;
+                }
+            }
+            results.add(count);
+        }
+        return results;
     }
 
 } // Week One
