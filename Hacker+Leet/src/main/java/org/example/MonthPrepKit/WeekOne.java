@@ -49,4 +49,9 @@ public class WeekOne {
         System.out.println(minSum + " " + maxSum);
     }
 
+//    Matching Strings
+    public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
+
+    }
+
 } // Week One
