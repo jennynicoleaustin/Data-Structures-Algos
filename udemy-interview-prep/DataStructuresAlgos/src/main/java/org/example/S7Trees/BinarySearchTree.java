@@ -1,5 +1,9 @@
 package org.example.S7Trees;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
 
     class Node {
@@ -140,8 +144,8 @@ public class BinarySearchTree {
         deleteNode(root, value);
     }
 
-//    Helper method that finds the minimum value in any binary search tree or subtree of a search tree
-//    -> go left until the next value == null. The node with the minimum value will always be open for adding nodes.
+    //    Helper method that finds the minimum value in any binary search tree or subtree of a search tree
+    //    -> go left until the next value == null. The node with the minimum value will always be open for adding nodes.
     public int minValue(Node currentNode) {
         while (currentNode.left != null) {
             currentNode = currentNode.left; // continue to traverse the tree to the left until currentNode.left = null
@@ -149,8 +153,24 @@ public class BinarySearchTree {
         return currentNode.value; // return the int value to be used inside the other function.
     }
 
-
-
+    // Breadth First Search -> Tree Traversal Section 15
+    public ArrayList<Integer> BFS() {
+        Node currentNode = root;
+        Queue<Node> queue = new LinkedList<>(); // built in java Queue
+        ArrayList<Integer> results = new ArrayList<>();
+        queue.add(currentNode); // contains the full node (value, left, right)
+        while (queue.size() > 0) { // while the queue is not empty
+            currentNode = queue.remove();
+            results.add(currentNode.value);
+            if (currentNode.left != null) {
+                queue.add(currentNode.left); // if current node has a value on the left, add it to the queue.
+            }
+            if (currentNode.right != null) {
+                queue.add(currentNode.right);
+            }
+        }
+        return results;
+    }
 
 
 } // Binary Search Trees
