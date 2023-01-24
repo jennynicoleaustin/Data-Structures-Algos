@@ -70,13 +70,13 @@ public class WeekOne {
 
     //    Lonely Integer
     //    1. Find the element (in an array of integers) that only occurs once.
-    public static int lonelyinteger(List<Integer> a) {
+    public static int lonelyInteger(List<Integer> a) {
         int lonelyInteger = -1;
         //Count the number of times each item occurs in the array
         //        if the count = 1; then lonely int = that item.
         for (int number : a) {
             int count = 0;
-            for(int i = 0; i < a.size(); i++) {
+            for (int i = 0; i < a.size(); i++) {
                 if (a.get(i) == number) {
                     count++;
                 }
@@ -86,6 +86,24 @@ public class WeekOne {
             }
         }
         return lonelyInteger;
+    }
+
+    //    Flipping Bits
+    //    Given a long n; flip all its big 0->1 and 1->0 and return the result as an long
+    public static long flippingBits(long n) {
+        //        1. convert n to bit
+        String bitN = Long.toBinaryString(n);
+        //        Making sure its 32 bits
+        String longEnough = String.format("%32s", bitN).replace(" ", "0");
+        //        2. exchange 0s for 1s and 1s for 0s
+        String aFor0 = longEnough.replace('0', 'a');
+        String bfor1 = aFor0.replace('1', 'b'); // here a=0 and b=1
+        String zerosFirst = bfor1.replace('a', '1'); // switch all the a(0) to 1
+        String finalResult = zerosFirst.replace('b', '0'); // switch all the b(1) to 0
+        //        3. convert result back to int
+        long result = Long.parseLong(finalResult, 2);
+
+        return result;
     }
 
 

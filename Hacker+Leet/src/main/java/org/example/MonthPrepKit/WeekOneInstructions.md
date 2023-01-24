@@ -8,3 +8,6 @@
 
 ### Lonely Integer
 ![](../../../../resources/InstructionScreenShots/lonelyInteger.png)
+
+### Flipping Bits 
+![](../../../../resources/InstructionScreenShots/flippingbits.png)
