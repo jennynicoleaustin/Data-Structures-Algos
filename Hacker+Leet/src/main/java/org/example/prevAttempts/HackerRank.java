@@ -43,33 +43,7 @@ public class HackerRank {
         return median;
     }
 
-    //    Give an array of integers where all elements except one occur 2x -> isolate the element that only occurs once.
-    public static int lonelyinteger(List<Integer> a) {
-        // iterate through the array to count the number of times an element occurs
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < a.size(); i++) {
-            if (map.containsKey(a.get(i))) {
-                map.remove(a.get(i));
-            } else {
-                map.put(a.get(i), i);
-            }
-        }
-        System.out.println(map);
-        Set<Integer> ind = map.keySet();
-        List<Integer> l = new ArrayList<Integer>(ind);
 
-        return a.get(map.get(l.get(0)));
-    }
-
-    //  Given a square matrix calculate the absolute difference between the sums of its diagonals
-    public static int diagonalDifference(List<List<Integer>> arr) {
-        int result = 0;
-//        List of lists...
-        int numColumnsAndRows = arr.get(0).size();
-//
-
-        return result;
-    }
 
 } //Hacker Rank Close
 

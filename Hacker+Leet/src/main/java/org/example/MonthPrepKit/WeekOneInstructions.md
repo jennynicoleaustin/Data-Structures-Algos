@@ -21,3 +21,7 @@
 
 ### Pangrams
 ![](../../../../resources/InstructionScreenShots/pangrams.png)
+
+### Permuting Two Arrays 
+![](../../../../resources/InstructionScreenShots/PermutingTwoArrays1.png)
+![](../../../../resources/InstructionScreenShots/PermutingTwoArrays2.png)
