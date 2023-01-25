@@ -14,7 +14,9 @@ public class Main {
         //        WeekOne.miniMaxSum(integerList);
         //        WeekOne.lonelyInteger(integerList);
         //        WeekOne.flippingBits(2147);
-//        WeekOne.diagonalDifference(matrix);
-WeekOne.countingSort(int1);
+        //        WeekOne.diagonalDifference(matrix);
+//        WeekOne.countingSort(int1);
+        WeekOne.pangrams("The quick brown foxx jumps over the lazy dog");
+
     } // Main method
 } // Main Class

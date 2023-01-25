@@ -1,8 +1,6 @@
 package org.example.MonthPrepKit;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class WeekOne {
 
@@ -133,9 +131,24 @@ public class WeekOne {
             result.add(0);
         }
         for (int num : arr) {
-            result.set(num, (result.get(num)+1));
+            result.set(num, (result.get(num) + 1));
         }
         return result;
     }
+
+
+    //    Pangrams
+    //    Determine if a string is a pangram or not; return pangram or not pangram
+    public static String pangrams(String s) {
+        String lowerS = s.toLowerCase();
+        if(lowerS.chars()
+                .filter(i -> i >= 'a' && i <= 'z')
+                .distinct().count() == 26) {
+            return "pangram";
+        } else {
+            return "not pangram";
+        }
+    }
+
 
 } // Week One

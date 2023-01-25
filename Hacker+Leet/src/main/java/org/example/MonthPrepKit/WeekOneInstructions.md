@@ -18,3 +18,6 @@
 ### Counting Sort 
 ![](../../../../resources/InstructionScreenShots/countingSort1.png)
 ![](../../../../resources/InstructionScreenShots/coutingsort2.png)
+
+### Pangrams
+![](../../../../resources/InstructionScreenShots/pangrams.png)
