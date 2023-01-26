@@ -62,9 +62,8 @@ public class JavaQuestions {
             }
         }
     }
-// professor name + associated course for all courses outside of their department
+// professor name + associated course for all courses outside their department
 
-// SELECT NAME as 'professor.name' FROM PROFESSOR ,
-//    NAME as 'course.name' FROM COURSE
+//2. Product Defects
 
 } // JavaQuestions
