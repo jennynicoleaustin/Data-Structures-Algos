@@ -141,7 +141,7 @@ public class WeekOne {
     //    Determine if a string is a pangram or not; return pangram or not pangram
     public static String pangrams(String s) {
         String lowerS = s.toLowerCase();
-        if(lowerS.chars()
+        if (lowerS.chars()
                 .filter(i -> i >= 'a' && i <= 'z')
                 .distinct().count() == 26) {
             return "pangram";
@@ -150,9 +150,27 @@ public class WeekOne {
         }
     }
 
-//    Permuting Two Arrays
+    //    Permuting Two Arrays
+    // Given two arrays of integers, permute them so, A[i] + B[i] >= k is true for all i where 0<= i < n;
+    //    return YES is a permutation for the elements exists.
+    //    k = the number to compare the sum of A+B to
+    public static String twoArrays(int k, List<Integer> A, List<Integer> B) {
+        Collections.sort(A);
+        Collections.sort(B,Collections.reverseOrder());
+        int n = A.size();
+        ArrayList<Integer> sumAL = new ArrayList<>();
 
+        for(int i=0;i<n;i++){
+            sumAL.add(A.get(i)+B.get(i));
+        }
 
+        for(int element: sumAL){
+            if(element<k){
+                return "NO";
+            }
+        }
+        return "YES";
+    }
 
 
 } // Week One
