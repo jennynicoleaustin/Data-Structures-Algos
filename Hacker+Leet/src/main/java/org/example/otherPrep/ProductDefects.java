@@ -10,27 +10,30 @@ public class ProductDefects {
     //    Find the largest area square of all 1s.
     public static int largestArea(List<List<Integer>> matrix) {
         int largestArea = 0;
-        int matrixSize = matrix.size(); // since the original problem specifies that the passed matrix is a SQUARE, you only need to obtain a single size.
-        // Create a square matrix to hold temp values as you iterate through the original matrix
-        int[][] tempMatrix = new int[matrixSize][matrixSize];
+        int size = matrix.size();
+        // Make a matrix for storing the size values, that is 1 row and 1 column larger than the original matrix
+        // purpose of this row and column is to handle the out of bound cases as iterating through.
+        int dpMatrix [][]  = new int [size + 1] [size + 1];
 
-        for (int i = 0; i < matrixSize; i++) {
-            for (int j = 0; j < matrixSize; j++) {
-                if (i > 0 && j > 0) {
-                    if (matrix.get(i).get(j) == 1){
-                        tempMatrix[i][j] = 1 + Math.min(tempMatrix[i-1][j], tempMatrix[i][j-1]);
+        // fill the dpMatrix based on the minimum value of the 3 adjacent indexes +1.
+        for (int i = 1; i < size; i++) {
+            for (int j = 1; j < size; j++) {
+                if (matrix.get(i).get(j) == 1) {
+                    dpMatrix[i][j] = 1 + Math.min(dpMatrix[i][j-1], Math.min(dpMatrix[i-1][j], dpMatrix[i-1][j-1]));
+                    if (largestArea < dpMatrix[i][j]) {
+                        largestArea = dpMatrix[i][j];
                     }
-                } else {
-                    if (matrix.get(i).get(j) == 1) {
-                        tempMatrix[i][j] = 1;
-                    }
-                    largestArea = Math.max(largestArea, tempMatrix[i][j]);
                 }
             }
         }
+//NOPE AGAIN
+
         System.out.println(largestArea);
         return largestArea;
     }
-//NOPE!
+
 
 } // ProductDefects
+
+// Notes from YouTube
+// - DP (Dynamic programing) can only be used if we use the previously calculated solution to build the current solution.

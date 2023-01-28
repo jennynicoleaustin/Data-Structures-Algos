@@ -172,5 +172,15 @@ public class WeekOne {
         return "YES";
     }
 
+// Find number of ways the bar can be divided if l = m and sum of l # of ints = d.
+    public static int birthday(List<Integer> s, int d, int m) {
+        int count = 0;
+//        m = the number of ints (length)
+//        d = sum of those ints
+
+
+        return count;
+    }
+
 
 } // Week One
